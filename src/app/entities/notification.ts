@@ -1,13 +1,14 @@
+import { randomUUID } from 'crypto'
 import { Replace } from 'src/helpers/Replace'
 
 import { Content } from './content'
-import { randomUUID } from 'crypto'
 export interface INotificationProps {
   recipientId: string
   content: Content
   category: string
   createdAt: Date
   readAt?: Date | null
+  cancelAt?: Date | null
 }
 
 export class Notification {
@@ -56,5 +57,13 @@ export class Notification {
 
   public get createdAt(): Date | null | undefined {
     return this.props.createdAt
+  }
+
+  public cancel() {
+    this.props.cancelAt = new Date()
+  }
+
+  public get cancelAt(): Date | null | undefined {
+    return this.props.cancelAt
   }
 }
