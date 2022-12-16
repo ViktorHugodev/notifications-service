@@ -1,4 +1,3 @@
-import { Content } from '@app/entities/content'
 import { makeNotification } from '@test/factories/notification-factory'
 
 import { InMemoryNotifications } from '../../../test/repositories/in-memory-notifications'
